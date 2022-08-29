@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300");
+
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  padding: 1rem;
+  width: 100%;
+  min-height: 60px;
+  max-height: 75px;
+  background-color: black;
+  color: white;
+}
+
+.navbar__links {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  font-family: "Poppins", sans-serif;
+  font-size: 2vw;
+  transition: all 0.8s ease-in-out;
+}
+
+/* .navbar__item::after {
+  content: "";
+  display: block;
+  margin: auto;
+  width: 3vw;
+  height: 1px;
+  background: white;
+}
+
+.navbar__item:last-child::after {
+  display: none;
+} */
+
+.navbar__link {
+  text-decoration: none;
+  padding: 0 1rem;
+  color: inherit;
+}
+
+.navbar__burger {
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  color: inherit;
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .navbar__links {
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    position: fixed;
+    right: -100vw;
+    bottom: 0;
+    height: 100vh;
+    padding: 2rem;
+    background-color: black;
+    visibility: hidden;
+  }
+
+  .menuVisible .navbar__links {
+    right: 0;
+    visibility: visible;
+    padding: 5rem 3rem;
+  }
+
+  .navbar__link {
+    display: block;
+    padding: 1.5rem;
+    font-size: 4vw;
+  }
+
+  .navbar__burger {
+    display: block;
+  }
+
+  .navbar__burger:hover {
+    cursor: pointer;
+  }
+
+  .burger-bar,
+  .burger-bar::before,
+  .burger-bar::after {
+    display: block;
+    width: 40px;
+    height: 3px;
+    position: relative;
+    border-radius: 3px;
+    background-color: white;
+    transition: all 0.4s ease-in-out;
+  }
+
+  .burger-bar::before,
+  .burger-bar::after {
+    content: "";
+    position: absolute;
+    left: 0;
+  }
+
+  .burger-bar::before {
+    transform: translateY(-12px);
+  }
+
+  .burger-bar::after {
+    transform: translateY(12px);
+  }
+
+  .menuVisible .burger-bar {
+    background: transparent;
+    /* width: 0; */
+  }
+
+  .menuVisible .burger-bar::before {
+    transform: rotate(-45deg);
+  }
+
+  .menuVisible .burger-bar::after {
+    transform: rotate(45deg);
+  }
+
+  /* Animation */
+  /* .navbar__item {
+    transform: translateX(100%);
+  }
+
+  .menuVisible .navbar__item {
+    transform: translateX(0);
+  }
+
+  .menuVisible .slideInDown-1 {
+    transition: all 1s ease-out;
+  }
+  .menuVisible .slideInDown-2 {
+    transition: all 1.5s ease-out;
+  }
+  .menuVisible .slideInDown-3 {
+    transition: all 2s ease-out;
+  } */
+}
